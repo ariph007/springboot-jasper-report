@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: report
+    datasource:
+        username: postgres
+        password: postgres
+        url: jdbc:postgresql://localhost:5432/employee
+        driver-class-name: org.postgresql.Driver
