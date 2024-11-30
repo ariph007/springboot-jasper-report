@@ -3,6 +3,9 @@ package com.devmentor.report.service;
 import com.devmentor.report.model.response.File;
 import net.sf.jasperreports.engine.JRException;
 
+import java.io.IOException;
+
 public interface EmployeeService {
-    File generateReportEmployee(String month) throws JRException;
+    File generateReportEmployeePdf(String month) throws JRException;
+    File generateReportEmployeeExcel(String month) throws IOException;
 }
