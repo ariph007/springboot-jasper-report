@@ -18,8 +18,9 @@ import java.time.ZonedDateTime;
 @NoArgsConstructor
 public class Department {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "department_seq_gen")
+    @SequenceGenerator(name = "department_seq_gen", sequenceName = "department_department_id_seq", allocationSize = 1)
     @Column(name = "department_id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
 
@@ -31,11 +32,11 @@ public class Department {
 
     @Column(name = "created_at", nullable = false, updatable = false)
     @CreatedDate
-    private ZonedDateTime createdAt;
+    private ZonedDateTime createdAt = ZonedDateTime.now();
 
     @Column(name = "updated_at", nullable = false)
     @LastModifiedBy
-    private ZonedDateTime updatedAt;
+    private ZonedDateTime updatedAt = ZonedDateTime.now();
 
 
 }
